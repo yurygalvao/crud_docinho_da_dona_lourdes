@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Cardápio da Dona Lourdes</title>
+</head>
+<body>
+    <h1>Doces da Dona Lourdes</h1>
+    <a href="/cadastro">Cadastrar Novo Doce</a>
+    <hr>
+    
+    <ul>
+        <% doces.forEach(doce => { %>
+            <li>
+                <strong><%= doce.nome %></strong> - R$ <%= doce.preco %>
+                <a href="/alterar/<%= doce.id %>"><button>Alterar</button></a>
+                <form action="/excluir/<%= doce.id %>" method="POST" style="display:inline;">
+                    <button type="submit">Excluir</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>

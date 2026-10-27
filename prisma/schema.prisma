@@ -1,0 +1,14 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Doce {
+  id    Int    @id @default(autoincrement())
+  nome  String
+  preco Float
+}
